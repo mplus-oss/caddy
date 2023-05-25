@@ -32,7 +32,6 @@ jobs:
           echo "LABEL org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}" >> Dockerfile
           echo "LABEL org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}" >> Dockerfile
           echo "LABEL org.opencontainers.image.version=${{ steps.caddy.outputs.tag }}" >> Dockerfile
-          echo "LABEL org.opencontainers.image.revision=${{ steps.hash.outputs.core }}" >> Dockerfile
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
