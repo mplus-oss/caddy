@@ -2,9 +2,8 @@ ARG CADDY_VERSION
 FROM caddy:${CADDY_VERSION}-builder AS builder
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
-    --with github.com/greenpau/caddy-security \
     --with github.com/caddyserver/transform-encoder \
-    --with github.com/greenpau/caddy-security
+    --with github.com/caddyserver/cache-handler
 
 FROM caddy:${CADDY_VERSION}
 LABEL org.opencontainers.image.authors="Syahrial Agni Prasetya <syahrial@mplus.software>"
